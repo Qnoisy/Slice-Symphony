@@ -1,0 +1,75 @@
+#root {
+	height: 100%;
+	width: 100%;
+}
+
+html[data-theme='dark'] {
+	--button-text-color: rgb(255, 255, 255);
+	--button-background-color: rgb(100, 100, 150);
+	--button-border-color: #ffffff;
+
+	--background-color: #292929;
+	--light-background-color: #494949;
+	--font-color: #ffffff;
+
+	--logo-text-color: rgb(235, 235, 235);
+	--lsit-color: #ffffff;
+}
+
+html[data-theme='light'] {
+	--button-text-color: #252525;
+	--button-background-color: rgb(100, 100, 150);
+	--button-border-color: rgb(100, 100, 200);
+
+	--button-border-color: rgb(235, 235, 235);
+
+	--background-color: #ffffff;
+	--light-background-color: rgb(242, 243, 244);
+	--font-color: #252525;
+
+	--logo-text-color: #adadad;
+	--lsit-color: #ffffff;
+}
+
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+[class*='__container'] {
+	width: min(calc(100% - 7.5rem), 80rem);
+	margin-inline: auto;
+	padding: 3rem 0;
+}
+
+@media (max-width: 1151.98px) {
+	[class*='__container'] {
+		width: calc(100% - 5rem);
+		padding: 2rem 0;
+	}
+}
+
+@media (max-width: 767.98px) {
+	[class*='__container'] {
+		width: calc(100% - 3.5rem);
+		padding: 1rem 0;
+	}
+}
+
+// @media (max-width: 1151.98px) {
+
+// }
+// @media (max-width: 959.98px) {
+
+// }
+// @media (max-width:767.98px) {
+
+// }
+// @media (max-width:539.98px) {
+
+// }
+// @media (max-width:400.98px) {
+
+// }

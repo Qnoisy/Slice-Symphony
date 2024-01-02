@@ -1,0 +1,69 @@
+$clBlue: rgb(100, 149, 237);
+$clBlue-hover: rgb(59, 113, 211);
+$clgrey: rgb(242, 243, 244);
+$ffRoboto: 'Roboto', sans-serif;
+$ffRobotoSlab: 'Roboto Slab', serif;
+
+@mixin df-centr {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin bg-color {
+	background-color: var(--background-color);
+	transition: background-color 200ms linear;
+}
+
+@mixin color {
+	color: var(--font-color);
+	transition: color 500ms linear;
+}
+
+@mixin bg-color-hover {
+	color: var(--button-text-color);
+	background-color: var(--button-background-color);
+	border-color: var(--button-border-color);
+	transition: color 500ms linear, background-color 500ms linear,
+		border-color 500ms linear;
+}
+@mixin color-hover {
+	color: var(--button-text-color);
+	transition: color 500ms linear;
+}
+
+@mixin color-list {
+	color: var(--lsit-color);
+	transition: color 500ms linear;
+}
+
+@mixin bg-color-light {
+	background-color: var(--light-background-color);
+	color: var(--font-color);
+	transition: color 500ms linear;
+}
+.btn {
+	background-color: $clBlue;
+	padding: 0.6rem 2rem;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	cursor: pointer;
+	border-radius: 10px;
+	border: 2px solid $clBlue;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+		rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	transition: 0.4s;
+	&:hover {
+		transition: 0.4s;
+		border: 2px solid $clBlue;
+		background-color: #fff;
+		color: $clBlue-hover;
+	}
+	&:active {
+		background-color: $clBlue-hover;
+	}
+	& span:last-child {
+		display: none;
+	}
+}
