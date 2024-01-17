@@ -1,0 +1,81 @@
+@import '../../../common/general.scss';
+.burger {
+	transform: translate(0, 12%);
+}
+.burger__content {
+	// overflow: hidden;
+	height: 0;
+	width: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.1s linear;
+	@include df-centr;
+	&.active {
+		transition: all 0.1s linear;
+		opacity: 1;
+		pointer-events: all;
+	}
+	@media (max-width: 959.98px) {
+		height: 100vh;
+		width: 100vw;
+	}
+}
+.burger__block {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	right: -50%;
+	width: 30vw;
+	height: 100vh;
+	padding: 1.5rem;
+	background-color: white;
+	transition: all 0.2s linear;
+	&.active {
+		right: 0%;
+		transition: all 0.2s linear;
+	}
+	@media (max-width: 959.98px) {
+		width: 30vw;
+		height: 100vh;
+	}
+	@media (max-width: 767.98px) {
+		width: 50vw;
+		height: 100vh;
+	}
+	@media (max-width: 33.74875em) {
+		width: 100vw;
+		height: 100vh;
+	}
+}
+.test1 {
+	display: block;
+}
+.test {
+	width: 100px;
+	text-align: center;
+	background-color: $clDarkGreen;
+	border-radius: 10px;
+	color: white;
+	font-size: 1.2;
+	padding: 1rem;
+}
+// @media (max-width: 1151.98px) {
+
+// }
+// @media (max-width: 959.98px) {
+
+// }
+// @media (max-width:767.98px) {
+
+// }
+// @media (max-width:539.98px) {
+
+// }
+// @media (max-width:400.98px) {
+
+// }

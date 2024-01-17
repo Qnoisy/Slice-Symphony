@@ -1,0 +1,19 @@
+@import '../../common/general.scss';
+.radioGroup {
+	margin-bottom: 0.5rem;
+}
+.radioGroup__label {
+	cursor: pointer;
+	font-size: 1.2rem;
+	transition: all 0.1s linear;
+	margin-bottom: 1rem;
+	&:hover {
+		color: $clBrown-hover;
+	}
+}
+.radioGroup__input {
+	display: none;
+}
+.radioGroup__input:checked + .radioGroup__label {
+	color: $clBrown;
+}
