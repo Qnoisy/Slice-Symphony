@@ -1,34 +1,56 @@
+@import './let.scss';
 #root {
 	height: 100%;
 	width: 100%;
 }
-
 html[data-theme='dark'] {
-	--button-text-color: rgb(255, 255, 255);
-	--button-background-color: rgb(100, 100, 150);
-	--button-border-color: #ffffff;
+	--button-text-color: $clDarkWhite;
+	--button-background-color: $clDarkGreen-hover;
+	--button-border-color: $clDarkGreen;
 
-	--background-color: #292929;
-	--light-background-color: #494949;
+	--background-color: $clDarkgrey;
 	--font-color: #ffffff;
+	--font-color-hover: $clDarkGreen;
 
-	--logo-text-color: rgb(235, 235, 235);
-	--lsit-color: #ffffff;
+	--list-color: #ffffff;
 }
 
 html[data-theme='light'] {
-	--button-text-color: #252525;
-	--button-background-color: rgb(100, 100, 150);
-	--button-border-color: rgb(100, 100, 200);
+	--button-text-color: $clWhite;
+	--button-background-color: $clGreen-hover;
+	--button-border-color: $clkGreen;
 
-	--button-border-color: rgb(235, 235, 235);
+	--background-color: $clgrey;
+	--font-color: $clBlack;
+	--font-color-hover: $clDarkGreen;
 
-	--background-color: #ffffff;
-	--light-background-color: rgb(242, 243, 244);
-	--font-color: #252525;
+	--list-color: $clBlack;
+}
+@mixin df-centr {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
-	--logo-text-color: #adadad;
-	--lsit-color: #ffffff;
+@mixin color {
+	color: var(--font-color);
+	transition: all 200ms linear;
+}
+@mixin color-hover {
+	color: var(--font-color-hover);
+	transition: all 200ms linear;
+}
+
+@mixin bg-color {
+	background-color: var(--background-color);
+	transition: background-color 200ms linear;
+}
+@mixin bg-color-hover {
+	color: var(--button-text-color);
+	background-color: var(--button-background-color);
+	border-color: var(--button-border-color);
+	transition: color 500ms linear, background-color 500ms linear,
+		border-color 500ms linear;
 }
 
 .wrapper {
@@ -36,26 +58,16 @@ html[data-theme='light'] {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
+	background-color: $clgrey;
 }
-
-[class*='__container'] {
-	width: min(calc(100% - 7.5rem), 80rem);
-	margin-inline: auto;
-	padding: 3rem 0;
+.main {
+	flex: 1 0 auto;
 }
-
-@media (max-width: 1151.98px) {
-	[class*='__container'] {
-		width: calc(100% - 5rem);
-		padding: 2rem 0;
-	}
+.header {
+	background-color: #ffffff;
 }
-
-@media (max-width: 767.98px) {
-	[class*='__container'] {
-		width: calc(100% - 3.5rem);
-		padding: 1rem 0;
-	}
+.footer {
+	background-color: white;
 }
 
 // @media (max-width: 1151.98px) {
