@@ -13,16 +13,26 @@ export const enum PizzaEnumType {
 	BBQ_SOUCE = 'BBQ Souce',
 	RANCH_SOUCE = 'Ranch Souce',
 }
+export const enum typeDeals {
+	DEALS = 'Deals',
+	PIZZAS = 'Pizzas',
+	DRINKS = 'Drinks',
+	SOUCE = 'Souce',
+}
 
-export type PizzaType = {
+export type FoodType = {
 	id: string;
+	type: typeDeals;
 	name: string;
 	img: string;
-	description: string;
+	description: string | null;
 	price: number;
 };
 
-export type PizzasTypeArray = {
-	info: PizzaType;
-	typePizzas: PizzaEnumType[];
+export type PizzasType = {
+	info: FoodType;
+	typePizzas?: PizzaEnumType[];
 };
+export interface PizzasTypeNew extends PizzasType {
+	count: number;
+}

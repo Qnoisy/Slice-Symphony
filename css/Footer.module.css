@@ -1,0 +1,216 @@
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+html[data-theme=dark] {
+  --button-text-color: #1abc9c;
+  --button-text-color-hover: #ffffff;
+  --button-background-color: #ffffff;
+  --button-background-color-hover: #8ed1b2;
+  --button-border-color: #1abc9c;
+  --background-color: #e2e2e2;
+  --second-background-color: #ffffff;
+  --text-color: #bbbbbb;
+  --text-color-hover: #8ed1b2;
+  --yellow-text-color: #f39c12;
+  --brown-text-color: #a5794f;
+  --brown-text-color-hover: #1abc9c;
+}
+
+html[data-theme=light] {
+  --button-text-color: #1abc9c;
+  --button-text-color-hover: #ffffff;
+  --button-background-color: #ffffff;
+  --button-background-color-hover: #8ed1b2;
+  --button-border-color: #1abc9c;
+  --background-color: #f7f7f7;
+  --second-background-color: #ffffff;
+  --text-color: #bbbbbb;
+  --text-color-hover: #8ed1b2;
+  --yellow-text-color: #ffcc66;
+  --brown-text-color: #a5794f;
+  --brown-text-color-hover: #1abc9c;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Lato", serif;
+  background-color: var(--background-color);
+  -webkit-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+}
+
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.header {
+  background-color: white;
+}
+
+.footer {
+  background-color: white;
+}
+
+.footer {
+  background-color: var(--second-background-color);
+  -webkit-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+  color: var(--text-color);
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  font-family: "Lato", serif;
+  width: 100%;
+}
+@media (max-width: 539.98px) {
+  .footer {
+    font-size: 0.8rem;
+  }
+}
+
+.footer__block {
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  justify-items: center;
+  gap: 1rem;
+  grid-template-rows: 1fr;
+}
+.footer__block a {
+  justify-self: start;
+}
+.footer__block img {
+  width: 8rem;
+  height: 3.5rem;
+}
+@media (max-width: 539.98px) {
+  .footer__block {
+    gap: 0.5rem;
+  }
+  .footer__block img {
+    width: 5rem;
+    height: 2.5rem;
+  }
+}
+
+.footer__contact {
+  color: var(--text-color);
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.footer__contact:hover {
+  color: var(--text-color-hover);
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.footer__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-self: end;
+  gap: 1rem;
+}
+.footer__social span {
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+}
+@media (max-width: 539.98px) {
+  .footer__social {
+    gap: 0.5rem;
+  }
+}
+
+.footer__img {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+@media (max-width: 539.98px) {
+  .footer__img {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+.copyraight {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--second-background-color);
+  -webkit-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+  color: var(--text-color);
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  text-align: center;
+  max-width: 100%;
+  font-size: 0.875rem;
+}
+
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+  outline: none;
+  border-radius: 0.3125rem;
+  color: #fff;
+}
+
+.footer__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+}
+
+.blue {
+  border: 0.125rem solid #5759cc;
+  background: #5759cc;
+}
+.blue:hover {
+  background: #fff;
+  color: #5759cc;
+}
+
+.purple {
+  border: 0.125rem solid #a757cc;
+  background: #a757cc;
+}
+.purple:hover {
+  background: #fff;
+  color: #a757cc;
+}

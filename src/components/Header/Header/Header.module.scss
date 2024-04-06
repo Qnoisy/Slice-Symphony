@@ -1,0 +1,94 @@
+@import '../../../common/general.scss';
+.header {
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr;
+	grid-template-rows: 1fr;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2rem;
+	font-family: $ffLato;
+	@include color;
+	@include bg-color;
+	@media (max-width: 539.98px) {
+		gap: 0.5rem;
+	}
+}
+.header__logo {
+	width: 8rem;
+	height: 3.5rem;
+	@media (max-width: 539.98px) {
+		width: 5rem;
+		height: 2.5rem;
+	}
+}
+.header__btn_inner {
+	display: flex;
+	gap: 0.5rem;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	button {
+		width: 100%;
+	}
+}
+
+.header__row {
+	justify-self: end;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	button {
+		@include bg-color;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	@media (max-width: 539.98px) {
+		gap: 0.5rem;
+	}
+}
+
+.language {
+	flex: 0 0 35px;
+	font-size: 1rem;
+	padding: 0.5rem;
+	@include color;
+
+	font-weight: 600;
+	background-color: white;
+}
+.header__links {
+	@include df-centr;
+	margin-right: 1rem;
+	gap: 1rem;
+	@media (max-width: 959.98px) {
+		display: none;
+	}
+}
+.header__linkText {
+	@include color;
+
+	text-align: end;
+	text-wrap: nowrap;
+	width: 100px;
+	font-weight: 500;
+	font-size: 1rem;
+	padding: 0.5rem;
+	&:hover {
+		@include color-hover;
+	}
+	&:focus {
+		@include color-hover;
+	}
+}
+.header__theme {
+	@include color;
+	display: flex;
+	align-items: center;
+	font-size: 1.4rem;
+	padding: 0.5rem;
+	@media (max-width: 959.98px) {
+		display: none;
+	}
+}

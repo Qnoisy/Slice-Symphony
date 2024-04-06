@@ -1,0 +1,190 @@
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+html[data-theme=dark] {
+  --button-text-color: #1abc9c;
+  --button-text-color-hover: #ffffff;
+  --button-background-color: #ffffff;
+  --button-background-color-hover: #8ed1b2;
+  --button-border-color: #1abc9c;
+  --background-color: #e2e2e2;
+  --second-background-color: #ffffff;
+  --text-color: #bbbbbb;
+  --text-color-hover: #8ed1b2;
+  --yellow-text-color: #f39c12;
+  --brown-text-color: #a5794f;
+  --brown-text-color-hover: #1abc9c;
+}
+
+html[data-theme=light] {
+  --button-text-color: #1abc9c;
+  --button-text-color-hover: #ffffff;
+  --button-background-color: #ffffff;
+  --button-background-color-hover: #8ed1b2;
+  --button-border-color: #1abc9c;
+  --background-color: #f7f7f7;
+  --second-background-color: #ffffff;
+  --text-color: #bbbbbb;
+  --text-color-hover: #8ed1b2;
+  --yellow-text-color: #ffcc66;
+  --brown-text-color: #a5794f;
+  --brown-text-color-hover: #1abc9c;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Lato", serif;
+  background-color: var(--background-color);
+  -webkit-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+}
+
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.header {
+  background-color: white;
+}
+
+.footer {
+  background-color: white;
+}
+
+.burger {
+  -webkit-transform: translate(0, 12%);
+          transform: translate(0, 12%);
+}
+
+.burger__content {
+  height: 0;
+  width: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.burger__content.active {
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  opacity: 1;
+  pointer-events: all;
+}
+@media (max-width: 959.98px) {
+  .burger__content {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+.burger__block {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: -50%;
+  width: 30vw;
+  height: 100vh;
+  padding: 1rem;
+  background-color: var(--second-background-color);
+  -webkit-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.burger__block.active {
+  right: 0%;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+@media (max-width: 959.98px) {
+  .burger__block {
+    width: 30vw;
+    height: 100vh;
+  }
+}
+@media (max-width: 767.98px) {
+  .burger__block {
+    width: 50vw;
+    height: 100vh;
+  }
+}
+@media (max-width: 33.74875em) {
+  .burger__block {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.burger__links {
+  display: block;
+}
+
+.burger__linkText {
+  color: var(--brown-text-color);
+  letter-spacing: 1px;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  display: block;
+  text-align: start;
+  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+}
+.burger__linkText:focus {
+  font-weight: 600;
+}
+
+.burger__theme {
+  color: var(--text-color);
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 21px;
+  height: 21px;
+  display: inline;
+  font-size: 1.4rem;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.burger__row {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  gap: 1rem;
+}

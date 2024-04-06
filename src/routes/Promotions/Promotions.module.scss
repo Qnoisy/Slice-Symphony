@@ -1,0 +1,45 @@
+@import '../../common/general.scss';
+.promotions {
+	font-family: $ffLato;
+	@include color;
+}
+.promotions__title {
+	@include brown-color;
+
+	text-align: center;
+	font-size: 1.75rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
+}
+.promotions__list {
+}
+.promotions__li {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 1rem;
+	@media (max-width: 47.99875em) {
+		flex-wrap: wrap;
+		gap: 0;
+	}
+}
+.promotions__block {
+	padding: 1rem;
+}
+.promotions__blockTitle {
+	@include brown-color;
+
+	margin-bottom: 1rem;
+	font-weight: 600;
+}
+.promotions__text {
+	margin-bottom: 1rem;
+}
+.promotions__img {
+	min-width: 18.75rem;
+	min-height: 9.375rem;
+	border-radius: 1rem;
+	background-color: rgb(198, 198, 209);
+	@media (max-width: 47.99875em) {
+		width: 100%;
+	}
+}

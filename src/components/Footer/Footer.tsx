@@ -12,7 +12,15 @@ export const Footer = ({}: FooterProps) => {
 				<Link to='/' className='header__logo'>
 					<img src='/img/logo.svg' alt='' />
 				</Link>
-				<p className={styles.footer__contact}>Contact us</p>
+				<div className={styles.footer__links}>
+					<Link to='/contact' className={styles.footer__contact}>
+						Contact us
+					</Link>
+					<Link to='/promotions' className={styles.footer__contact}>
+						Promotions
+					</Link>
+				</div>
+
 				<div className={styles.footer__social}>
 					<span className={classNames(styles.btn, styles.purple)}>
 						<FaInstagram className={styles.footer__img} />

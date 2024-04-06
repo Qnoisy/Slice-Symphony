@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Search.module.scss';
 
 interface SearchProps {
@@ -9,6 +9,18 @@ interface SearchProps {
 }
 
 export const Search = ({ active, setActive, children }: SearchProps) => {
+	useEffect(() => {
+		const handleEscKeyPress = (event: KeyboardEvent) => {
+			if (event.key === 'Escape') {
+				setActive(false);
+			}
+		};
+		document.addEventListener('keydown', handleEscKeyPress);
+		return () => {
+			document.removeEventListener('keydown', handleEscKeyPress);
+		};
+	}, [setActive]);
+
 	return (
 		<div
 			className={classNames(styles.search, { [styles.active]: active })}

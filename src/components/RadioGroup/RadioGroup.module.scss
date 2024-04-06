@@ -7,13 +7,21 @@
 	font-size: 1.2rem;
 	transition: all 0.1s linear;
 	margin-bottom: 1rem;
+	@include color;
 	&:hover {
-		color: $clBrown-hover;
+		@include color-hover;
+	}
+	@media (max-width: 767.98px) {
+		font-size: 1rem;
+		margin-bottom: 0.5rem;
+	}
+	@media (max-width: 539.98px) {
+		font-size: 0.8rem;
 	}
 }
 .radioGroup__input {
 	display: none;
 }
 .radioGroup__input:checked + .radioGroup__label {
-	color: $clBrown;
+	@include color-hover;
 }

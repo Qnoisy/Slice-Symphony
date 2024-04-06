@@ -22,11 +22,14 @@
 	width: 50vw;
 	padding: 1.5rem;
 	border-radius: 0.75rem;
-	background-color: white;
+	@include bg-color;
 	transform: scale(0.5);
 	transition: all 0.1s linear;
 	&.active {
 		transform: scale(1);
 		transition: all 0.1s linear;
+	}
+	@media (max-width: 767.98px) {
+		padding: 1rem;
 	}
 }

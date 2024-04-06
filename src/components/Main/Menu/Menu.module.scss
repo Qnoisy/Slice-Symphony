@@ -1,0 +1,76 @@
+@import '../../../common/general.scss';
+.container {
+	padding: 0.5rem 0;
+}
+.menu {
+	border-radius: 1rem;
+	@include bg-color;
+	padding: 1rem;
+	font-family: $ffLato;
+}
+.menu__list {
+	display: flex;
+	justify-content: space-around;
+	gap: 1rem;
+	align-items: center;
+	@media (max-width: 767.98px) {
+		img {
+			display: none;
+		}
+		gap: 0.5rem;
+	}
+}
+.menu__li {
+	@include brown-color;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr auto;
+	gap: 0.8rem;
+	font-size: 0.9rem;
+	justify-items: center;
+	cursor: pointer;
+	font-weight: 600;
+	text-transform: uppercase;
+	&:hover {
+		@include brown-color-hover;
+	}
+	@media (max-width: 767.98px) {
+		grid-template-rows: 1fr;
+		gap: 0;
+	}
+}
+.menuBasket {
+	height: 100%;
+	display: flex;
+	gap: 1.5rem;
+	align-items: flex-start;
+	@media (max-width: 959.98px) {
+		display: block;
+	}
+}
+.media {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 2;
+	padding: 1rem;
+	@media (min-width: 959.98px) {
+		display: none;
+	}
+}
+.media__basket {
+	width: 2.5rem;
+	height: 2.5rem;
+	@include brown-color;
+}
+.basket__length {
+	@include df-centr;
+	position: absolute;
+	transform: translate(0px, -10px);
+	background-color: red;
+	font-size: 0.8rem;
+	border-radius: 50%;
+	color: white;
+	width: 17px;
+	height: 17px;
+}

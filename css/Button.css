@@ -1,0 +1,118 @@
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+html[data-theme=dark] {
+  --button-text-color: #1abc9c;
+  --button-text-color-hover: #ffffff;
+  --button-background-color: #ffffff;
+  --button-background-color-hover: #8ed1b2;
+  --button-border-color: #1abc9c;
+  --background-color: #e2e2e2;
+  --second-background-color: #ffffff;
+  --text-color: #bbbbbb;
+  --text-color-hover: #8ed1b2;
+  --yellow-text-color: #f39c12;
+  --brown-text-color: #a5794f;
+  --brown-text-color-hover: #1abc9c;
+}
+
+html[data-theme=light] {
+  --button-text-color: #1abc9c;
+  --button-text-color-hover: #ffffff;
+  --button-background-color: #ffffff;
+  --button-background-color-hover: #8ed1b2;
+  --button-border-color: #1abc9c;
+  --background-color: #f7f7f7;
+  --second-background-color: #ffffff;
+  --text-color: #bbbbbb;
+  --text-color-hover: #8ed1b2;
+  --yellow-text-color: #ffcc66;
+  --brown-text-color: #a5794f;
+  --brown-text-color-hover: #1abc9c;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Lato", serif;
+  background-color: var(--background-color);
+  -webkit-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+}
+
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+.header {
+  background-color: white;
+}
+
+.footer {
+  background-color: white;
+}
+
+.button {
+  display: block;
+  font-size: 1rem;
+  font-family: "Lato", serif;
+}
+
+.css-button-rounded--green {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.4rem;
+  padding-bottom: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  border-radius: 0.5rem;
+  border: 0.125rem solid;
+  color: var(--button-text-color);
+  background-color: var(--button-background-color);
+  border-color: var(--button-border-color);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.css-button-rounded--green:hover {
+  background: #fff;
+  color: #57cc99;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  color: var(--button-text-color-hover);
+  background-color: var(--button-background-color-hover);
+  border-color: var(--button-background-color-hover);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.css-button-rounded--green:active {
+  pointer-events: none;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+@media (max-width: 539.98px) {
+  .css-button-rounded--green {
+    font-weight: 400;
+    font-size: 0.8rem;
+    padding: 0.2rem;
+  }
+}

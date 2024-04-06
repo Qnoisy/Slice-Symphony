@@ -1,0 +1,56 @@
+@import '../../../common/general.scss';
+.mainCard {
+	@include bg-color;
+	@include color;
+	border-radius: 1rem;
+	overflow: hidden;
+	font-family: $ffLato;
+}
+.mainCard__img {
+	max-width: 100%;
+	object-fit: cover;
+}
+.mainCard__block {
+	display: grid;
+	grid-auto-flow: row;
+	grid-template-rows: 1fr auto 1fr;
+	padding: 1.5rem;
+	@media (max-width: 767.98px) {
+		padding: 1rem;
+	}
+}
+.mainCard__title {
+	@include brown-color;
+
+	font-size: 1.25rem;
+	font-weight: 500;
+	margin-bottom: 1rem;
+	@media (max-width: 767.98px) {
+		font-size: 1rem;
+	}
+}
+.mainCard__description {
+	margin-bottom: 1rem;
+	min-height: 5rem;
+	letter-spacing: 0.5px;
+	@media (max-width: 767.98px) {
+		font-size: 0.8rem;
+		min-height: 3rem;
+	}
+}
+.mainCard__row {
+	display: flex;
+	gap: 1rem;
+	justify-content: space-between;
+	align-items: center;
+}
+.mainCard__price {
+	@include brown-color;
+
+	font-family: $ffPlayfair-Display;
+	font-weight: 600;
+	font-size: 1.5rem;
+	@media (max-width: 767.98px) {
+		font-size: 1rem;
+	}
+}
