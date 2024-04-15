@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import { SlBasket } from 'react-icons/sl';
 import { Link } from 'react-router-dom';
 import { PizzasTypeNew } from 'types';
@@ -78,12 +79,17 @@ export const Basket = ({
 						<div className={styles.basket__length}>{basketArr.length}</div>
 					)}
 				</Link>
-				<button className={styles.basket__text} onClick={clearBasket}>
-					Clear
-				</button>
 				{basketArr.length > 0 && renderCards()}
-				<div className={styles.basket__text}>
-					total: {totalPrice.toFixed(2)}$
+				<div className={classNames(styles.basket__items, styles.basket__row)}>
+					<div className={styles.basket__text}>
+						total: {totalPrice.toFixed(2)}$
+					</div>
+					<button
+						className={classNames(styles.basket__text, styles.basket__btn)}
+						onClick={clearBasket}
+					>
+						Clear
+					</button>
 				</div>
 			</div>
 		</div>

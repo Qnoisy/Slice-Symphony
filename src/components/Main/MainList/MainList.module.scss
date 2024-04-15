@@ -1,8 +1,7 @@
 @import '../../../common/general.scss';
 .mainList {
 	font-family: $ffLato;
-	padding: 1.5rem 0;
-	margin-bottom: 2rem;
+
 	@media (max-width: 767.98px) {
 		padding: 1rem 0;
 		margin-bottom: 1rem;
@@ -22,7 +21,7 @@
 .mainList__row {
 	display: flex;
 	gap: 1rem;
-	margin-bottom: 1rem;
+	padding: 1rem 0;
 }
 .mainList__link {
 	@include brown-color;
@@ -39,7 +38,7 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: auto;
-	gap: 1rem;
+	gap: 1.5rem;
 	max-width: 100%;
 	@media (max-width: 1151.98px) {
 		grid-template-columns: 1fr 1fr;

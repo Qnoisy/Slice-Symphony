@@ -105,6 +105,8 @@ html[data-theme='light'] {
 }
 .footer {
 	background-color: white;
+	position: relative;
+	z-index: 3;
 }
 
 // @media (max-width: 1151.98px) {
