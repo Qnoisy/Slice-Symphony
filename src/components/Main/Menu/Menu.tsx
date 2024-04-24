@@ -1,6 +1,6 @@
-import { BasketContext, IContext } from 'common/context/context';
+import { BasketContext, ComponentBasketContext } from 'common/context/context';
 import { FoodArray } from 'mas/FoodArray';
-import { useEffect, useRef, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import { SlBasket } from 'react-icons/sl';
 import { Link } from 'react-router-dom';
 import { PizzasType, PizzasTypeNew, typeDeals } from 'types';
@@ -38,8 +38,8 @@ const listArr: IListArr[] = [
 	},
 ];
 
-const List = ({ listArr, refs }: ListProps) => {
-	const handlerClick = (
+const List = memo(({ listArr, refs }: ListProps) => {
+	const scrollToSection = (
 		link: React.MutableRefObject<HTMLDivElement | null>
 	) => {
 		link.current?.scrollIntoView({
@@ -51,7 +51,7 @@ const List = ({ listArr, refs }: ListProps) => {
 		<li
 			key={index}
 			className={styles.menu__li}
-			onClick={() => handlerClick(refs[index])}
+			onClick={() => scrollToSection(refs[index])}
 		>
 			<img src={item.img} alt='' />
 			<span>{item.title}</span>
@@ -63,7 +63,7 @@ const List = ({ listArr, refs }: ListProps) => {
 			<ul className={styles.menu__list}>{renderList}</ul>{' '}
 		</nav>
 	);
-};
+});
 
 export const Menu = () => {
 	const Deals = useRef<HTMLDivElement | null>(null);
@@ -137,30 +137,27 @@ export const Menu = () => {
 		return mas;
 	};
 
-	const context: IContext = { AddCart };
-	console.log(basketArr);
-
 	return (
-		<BasketContext.Provider value={context}>
-			<div className={styles.container}>
-				<List listArr={listArr} refs={refs} />
-				<div className={styles.menuBasket}>
-					<div>{renderList()}</div>
-					<Basket
-						basketArr={basketArr}
-						clearBasket={clearBasket}
-						setBasketArr={setBasketArr}
-					/>
+		<ComponentBasketContext.Provider
+			value={{ basketArr, setBasketArr, clearBasket }}
+		>
+			<BasketContext.Provider value={{ AddCart }}>
+				<div className={styles.container}>
+					<List listArr={listArr} refs={refs} />
+					<div className={styles.menuBasket}>
+						<div>{renderList()}</div>
+						<Basket />
+					</div>
+					<div className={styles.media}>
+						<Link to='/basket'>
+							<SlBasket className={styles.media__basket} />
+							{basketArr.length !== 0 && (
+								<div className={styles.basket__length}>{basketArr.length}</div>
+							)}
+						</Link>
+					</div>
 				</div>
-				<div className={styles.media}>
-					<Link to='/basket'>
-						<SlBasket className={styles.media__basket} />
-						{basketArr.length !== 0 && (
-							<div className={styles.basket__length}>{basketArr.length}</div>
-						)}
-					</Link>
-				</div>
-			</div>
-		</BasketContext.Provider>
+			</BasketContext.Provider>
+		</ComponentBasketContext.Provider>
 	);
 };

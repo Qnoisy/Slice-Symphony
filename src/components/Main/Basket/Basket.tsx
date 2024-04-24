@@ -1,20 +1,17 @@
 import classNames from 'classnames';
+import {
+	ComponentBasketContext,
+	IComponentBasketC,
+} from 'common/context/context';
+import { useContext } from 'react';
 import { SlBasket } from 'react-icons/sl';
 import { Link } from 'react-router-dom';
 import { PizzasTypeNew } from 'types';
 import styles from './Basket.module.scss';
 
-interface BasketProps {
-	basketArr: PizzasTypeNew[];
-	setBasketArr: React.Dispatch<React.SetStateAction<PizzasTypeNew[]>>;
-	clearBasket: () => void;
-}
-
-export const Basket = ({
-	basketArr,
-	setBasketArr,
-	clearBasket,
-}: BasketProps) => {
+export const Basket = () => {
+	const { basketArr, setBasketArr, clearBasket } =
+		useContext<IComponentBasketC>(ComponentBasketContext);
 	const totalPrice = basketArr.reduce(
 		(total, item) => total + item.info.price * item.count,
 		0
@@ -73,7 +70,7 @@ export const Basket = ({
 	return (
 		<div className={styles.basket}>
 			<div className={styles.basket__content}>
-				<Link to='/basket'>
+				<Link to='/form'>
 					<SlBasket className={styles.basket__img} />
 					{basketArr.length !== 0 && (
 						<div className={styles.basket__length}>{basketArr.length}</div>

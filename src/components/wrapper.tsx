@@ -5,6 +5,7 @@ import '../common/general.scss';
 import '../common/reset.scss';
 import { Container } from './Container';
 import { Footer } from './Footer';
+import { CustomForm } from './Form';
 import { Header } from './Header/Header';
 import { Menu } from './Main/Menu';
 
@@ -22,7 +23,7 @@ const Wrapper = () => {
 						<Route path='/' element={<Menu />} />
 						<Route path='/promotions' element={<Promotions />} />
 						<Route path='/contact' element={<Contact />} />
-						{/* <Route path='/basket' element={<Basket />} /> */}
+						<Route path='/form' element={<CustomForm />} />
 					</Routes>
 				</Container>
 			</div>
