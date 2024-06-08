@@ -60,12 +60,12 @@ html[data-theme=light] {
 
 .footer {
   background-color: white;
+  position: relative;
+  z-index: 2;
 }
 
 .mainList {
   font-family: "Lato", serif;
-  padding: 1.5rem 0;
-  margin-bottom: 2rem;
 }
 @media (max-width: 767.98px) {
   .mainList {
@@ -95,7 +95,7 @@ html[data-theme=light] {
   display: -ms-flexbox;
   display: flex;
   gap: 1rem;
-  margin-bottom: 1rem;
+  padding: 1rem 0;
 }
 
 .mainList__link {
@@ -116,7 +116,7 @@ html[data-theme=light] {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
-  gap: 1rem;
+  gap: 1.5rem;
   max-width: 100%;
 }
 @media (max-width: 1151.98px) {

@@ -60,6 +60,8 @@ html[data-theme=light] {
 
 .footer {
   background-color: white;
+  position: relative;
+  z-index: 2;
 }
 
 .footer {
@@ -167,6 +169,11 @@ html[data-theme=light] {
   max-width: 100%;
   font-size: 0.875rem;
 }
+@media (max-width: 539.98px) {
+  .copyraight {
+    font-size: 0.625rem;
+  }
+}
 
 .btn {
   display: -webkit-box;
@@ -195,6 +202,11 @@ html[data-theme=light] {
   display: -ms-flexbox;
   display: flex;
   gap: 2rem;
+}
+@media (max-width: 539.98px) {
+  .footer__links {
+    gap: 0.5rem;
+  }
 }
 
 .blue {

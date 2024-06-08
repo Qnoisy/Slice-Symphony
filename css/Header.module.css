@@ -60,6 +60,8 @@ html[data-theme=light] {
 
 .footer {
   background-color: white;
+  position: relative;
+  z-index: 2;
 }
 
 .header {
@@ -98,7 +100,7 @@ html[data-theme=light] {
   }
 }
 
-.header__btn {
+.header__btn_inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -111,7 +113,7 @@ html[data-theme=light] {
           align-items: center;
   width: 100%;
 }
-.header__btn button {
+.header__btn_inner button {
   width: 100%;
 }
 

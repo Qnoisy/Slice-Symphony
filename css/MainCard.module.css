@@ -60,6 +60,8 @@ html[data-theme=light] {
 
 .footer {
   background-color: white;
+  position: relative;
+  z-index: 2;
 }
 
 .mainCard {

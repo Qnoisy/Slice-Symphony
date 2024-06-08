@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { Twirl as Hamburger } from 'hamburger-react';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { MdLightMode, MdOutlineLightMode } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import styles from './Burger.module.scss';
@@ -20,12 +20,6 @@ export const Burger = ({
 	setTheme,
 	onClick,
 }: BurgerProps) => {
-	const [isOpen, setIsOpen] = useState(false);
-
-	const handleActiveBurger = () => {
-		setActive(false);
-		setIsOpen(false);
-	};
 	useEffect(() => {
 		const handleEscKeyPress = (event: KeyboardEvent) => {
 			if (event.key === 'Escape') {
@@ -43,7 +37,7 @@ export const Burger = ({
 				className={classNames(styles.burger__content, {
 					[styles.active]: active,
 				})}
-				onClick={handleActiveBurger}
+				onClick={onClick}
 			>
 				<div
 					className={classNames(styles.burger__block, {
@@ -86,14 +80,7 @@ export const Burger = ({
 	};
 	const renderBurger = () => {
 		return (
-			<label className={styles.burger} onClick={onClick}>
-				<Hamburger
-					toggled={isOpen}
-					toggle={setIsOpen}
-					size={22}
-					color='#a5a5a5'
-				/>
-			</label>
+			<Hamburger toggled={active} toggle={onClick} size={22} color='#a5a5a5' />
 		);
 	};
 

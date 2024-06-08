@@ -60,6 +60,8 @@ html[data-theme=light] {
 
 .footer {
   background-color: white;
+  position: relative;
+  z-index: 2;
 }
 
 .button {
@@ -93,21 +95,35 @@ html[data-theme=light] {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.css-button-rounded--green:hover {
-  background: #fff;
-  color: #57cc99;
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-  color: var(--button-text-color-hover);
-  background-color: var(--button-background-color-hover);
-  border-color: var(--button-background-color-hover);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
 .css-button-rounded--green:active {
-  pointer-events: none;
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+@media (hover: hover) {
+  .css-button-rounded--green:hover {
+    background: #fff;
+    color: #57cc99;
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    color: var(--button-text-color-hover);
+    background-color: var(--button-background-color-hover);
+    border-color: var(--button-background-color-hover);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+}
+@media (hover: none) {
+  .css-button-rounded--green:active {
+    background: #fff;
+    color: #57cc99;
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    color: var(--button-text-color-hover);
+    background-color: var(--button-background-color-hover);
+    border-color: var(--button-background-color-hover);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
 }
 @media (max-width: 539.98px) {
   .css-button-rounded--green {

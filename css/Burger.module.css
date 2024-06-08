@@ -60,6 +60,8 @@ html[data-theme=light] {
 
 .footer {
   background-color: white;
+  position: relative;
+  z-index: 2;
 }
 
 .burger {
@@ -72,7 +74,7 @@ html[data-theme=light] {
   width: 0;
   background-color: rgba(0, 0, 0, 0.4);
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   top: 0;
   left: 0;
   opacity: 0;
